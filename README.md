@@ -2,7 +2,7 @@
 
 [中文](README.md) · [English](README_EN.md)
 
-云端 AI 短视频成片工作台：输入一个主题，自动生成口播稿、合成配音、匹配画面、烧录字幕，一键导出竖屏/横屏成片。全部走云服务，本机不需要安装任何模型。
+云端 AI 短视频成片工作台：输入一个主题，自动生成口播稿、合成配音、匹配画面、烧录字幕，一键导出竖屏/横屏成片。全部走云服务，本机不需要安装任何模型。[点击下载](https://github.com/ahnuchen/cloudreel/releases)
 
 <p align="center">
   <img src="build/icon.png" width="128" alt="CloudReel" />

@@ -2,7 +2,7 @@
 
 [中文](README.md) · [English](README_EN.md)
 
-A cloud-only AI short-video studio for desktop: give it a topic, and it writes the narration, synthesizes the voice-over, matches stock footage, burns in subtitles and exports a finished vertical or landscape video. No local models required.
+A cloud-only AI short-video studio for desktop: give it a topic, and it writes the narration, synthesizes the voice-over, matches stock footage, burns in subtitles and exports a finished vertical or landscape video. No local models required.[download](https://github.com/ahnuchen/cloudreel/releases)
 
 <p align="center">
   <img src="build/icon.png" width="128" alt="CloudReel" />

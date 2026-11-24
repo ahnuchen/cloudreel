@@ -1,0 +1,113 @@
+{
+  "name": "cloudreel",
+  "productName": "CloudReel",
+  "version": "0.1.0",
+  "private": true,
+  "description": "CloudReel - 云端 AI 短视频成片工作台",
+  "main": "./out/main/index.js",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "preview": "electron-vite preview",
+    "typecheck": "tsc --noEmit -p tsconfig.node.json && tsc --noEmit -p tsconfig.web.json",
+    "icons": "node scripts/make-icons.mjs",
+    "dist": "npm run dist:win",
+    "dist:win": "electron-vite build && electron-builder --win nsis --x64",
+    "dist:win:dir": "electron-vite build && electron-builder --win dir --x64",
+    "dist:mac": "electron-vite build && electron-builder --mac dmg zip",
+    "dist:mac:dir": "electron-vite build && electron-builder --mac dir",
+    "e2e": "node scripts/e2e.mjs"
+  },
+  "dependencies": {
+    "ffmpeg-static": "^5.3.0",
+    "ws": "^8.23.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@types/ws": "^8.18.0",
+    "@vitejs/plugin-react": "^5.2.0",
+    "electron": "^45.4.1",
+    "electron-builder": "^26.18.0",
+    "electron-vite": "^6.0.0",
+    "lucide-react": "^1.77.0",
+    "playwright": "^1.65.1",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "typescript": "~5.9.3",
+    "vite": "^7.1.0"
+  },
+  "author": "CloudReel",
+  "build": {
+    "appId": "com.cloudreel.app",
+    "productName": "CloudReel",
+    "copyright": "Copyright © 2026 CloudReel",
+    "directories": {
+      "output": "release",
+      "buildResources": "build"
+    },
+    "files": [
+      "out/**/*",
+      "package.json"
+    ],
+    "asarUnpack": [
+      "node_modules/ffmpeg-static/**"
+    ],
+    "win": {
+      "icon": "build/icon.ico",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "artifactName": "${productName}-${version}-setup-${arch}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": "always",
+      "createStartMenuShortcut": true,
+      "shortcutName": "CloudReel",
+      "uninstallDisplayName": "CloudReel ${version}",
+      "installerIcon": "build/icon.ico",
+      "uninstallerIcon": "build/icon.ico",
+      "installerHeaderIcon": "build/icon.ico",
+      "deleteAppDataOnUninstall": false
+    },
+    "mac": {
+      "icon": "build/icon.icns",
+      "category": "public.app-category.video",
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "x64",
+            "arm64"
+          ]
+        },
+        {
+          "target": "zip",
+          "arch": [
+            "x64",
+            "arm64"
+          ]
+        }
+      ],
+      "artifactName": "${productName}-${version}-${arch}.${ext}"
+    },
+    "dmg": {
+      "icon": "build/icon.icns",
+      "iconSize": 110,
+      "window": {
+        "width": 540,
+        "height": 380
+      }
+    }
+  }
+}

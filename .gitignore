@@ -1,0 +1,9 @@
+node_modules/
+out/
+release/
+scripts/shots/
+build/icon.html
+.idea/
+*.log
+.DS_Store
+Thumbs.db
